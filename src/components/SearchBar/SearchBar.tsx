@@ -1,11 +1,11 @@
 import toast from "react-hot-toast";
 import css from "./SearchBar.module.css";
 
-interface SubmitBarProps {
+interface SearchBarProps {
   onSubmit: (query: string) => void;
 }
 
-const SearchBar = ({ onSubmit }: SubmitBarProps) => {
+export default function SearchBar({ onSubmit }: SearchBarProps) {
   return (
     <header className={css.header}>
       <div className={css.container}>
@@ -44,6 +44,4 @@ const SearchBar = ({ onSubmit }: SubmitBarProps) => {
       </div>
     </header>
   );
-};
-
-export default SearchBar;
+}
