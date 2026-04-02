@@ -16,7 +16,7 @@ export const fetchMovies = async (
   const response = await axios.get<FetchMoviesResponse>(
     `${BASE_URL}/search/movie`,
     {
-      params: { query, page },
+      params: { query, page, include_adult: false },
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
@@ -25,4 +25,3 @@ export const fetchMovies = async (
 
   return response.data;
 };
-
