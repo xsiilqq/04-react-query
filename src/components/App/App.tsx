@@ -7,9 +7,13 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import MovieModal from "../MovieModal/MovieModal";
 import { fetchMovies } from "../../services/movieService";
 import type { Movie } from "../../types/movie";
-import ReactPaginate from "react-paginate";
+import ReactPaginateImport from "react-paginate";
 import toast, { Toaster } from "react-hot-toast";
 import css from "./App.module.css";
+
+const ReactPaginate =
+  (ReactPaginateImport as unknown as { default?: typeof ReactPaginateImport })
+    .default ?? ReactPaginateImport;
 
 const App = () => {
   const [query, setQuery] = useState("");
